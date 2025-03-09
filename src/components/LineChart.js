@@ -10,6 +10,7 @@ import {
   Tooltip,
   Legend,
 } from 'chart.js';
+import { Paper } from '@mui/material';
 
 // Registra los componentes de Chart.js
 ChartJS.register(
@@ -40,6 +41,7 @@ const LineChart = () => {
   // Opciones del gráfico
   const options = {
     responsive: true,
+    maintainAspectRatio: false, // Permite que el gráfico se ajuste al contenedor
     plugins: {
       legend: {
         position: 'top',
@@ -51,7 +53,11 @@ const LineChart = () => {
     },
   };
 
-  return <Line data={data} options={options} />;
+  return (
+    <Paper sx={{ padding: 2, height: '400px' }}>
+      <Line data={data} options={options} />
+    </Paper>
+  );
 };
 
 export default LineChart;

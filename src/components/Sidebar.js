@@ -1,15 +1,33 @@
 import React from 'react';
-import './Sidebar.css';
+import { Drawer, List, ListItem, ListItemIcon, Toolbar, ListItemText } from '@mui/material';
+import InboxIcon from '@mui/icons-material/Inbox';
+import MailIcon from '@mui/icons-material/Mail';
 
 const Sidebar = () => {
   return (
-    <aside className="sidebar">
-      <ul>
-        <li>Inicio</li>
-        <li>Reportes</li>
-        <li>Configuración</li>
-      </ul>
-    </aside>
+    <Drawer
+      variant="permanent"
+      sx={{
+        width: 240,
+        flexShrink: 0,
+        '& .MuiDrawer-paper': {
+          width: 240,
+          boxSizing: 'border-box',
+        },
+      }}
+    >
+      <Toolbar /> {/* Espacio para el AppBar */}
+      <List>
+        {['Inicio', 'Reportes', 'Configuración'].map((text, index) => (
+          <ListItem button key={text}>
+            <ListItemIcon>
+              {index % 2 === 0 ? <InboxIcon /> : <MailIcon />}
+            </ListItemIcon>
+            <ListItemText primary={text} />
+          </ListItem>
+        ))}
+      </List>
+    </Drawer>
   );
 };
 

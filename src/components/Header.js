@@ -1,11 +1,15 @@
 import React from 'react';
-import './Header.css';
+import { AppBar, Toolbar, Typography } from '@mui/material';
 
 const Header = () => {
   return (
-    <header className="header">
-      <h1>React Dashboard</h1>
-    </header>
+    <AppBar position="static">
+      <Toolbar>
+        <Typography variant="h6" component="div" sx={{ flexGrow: 1 }}>
+          React Dashboard
+        </Typography>
+      </Toolbar>
+    </AppBar>
   );
 };
 

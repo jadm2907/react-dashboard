@@ -6,6 +6,7 @@ import {
   Tooltip,
   Legend,
 } from 'chart.js';
+import { Paper } from '@mui/material';
 
 // Registra los componentes de Chart.js
 ChartJS.register(
@@ -17,7 +18,7 @@ ChartJS.register(
 const PieChart = () => {
   // Datos para el gráfico
   const data = {
-    labels: ['Red', 'Blue', 'Yellow', 'Green', 'Purple', 'Orange'],
+    labels: ['Pensamiento introvertido', 'Sentimental introvertido', 'Sensación - introvertido', 'Intuitivo - introvertido', 'Pensamiento extrovertido', 'Sensación - extrovertido'],
     datasets: [
       {
         label: '# of Votes',
@@ -46,18 +47,23 @@ const PieChart = () => {
   // Opciones del gráfico
   const options = {
     responsive: true,
+    maintainAspectRatio: false, // Permite que el gráfico se ajuste al contenedor
     plugins: {
       legend: {
         position: 'top',
       },
       title: {
         display: true,
-        text: 'Distribución de colores',
+        text: 'Tipos de personalidad según Jung',
       },
     },
   };
 
-  return <Pie data={data} options={options} />;
+  return (
+    <Paper sx={{ padding: 2, height: '400px' }}>
+      <Pie data={data} options={options} />
+    </Paper>
+  );
 };
 
 export default PieChart;

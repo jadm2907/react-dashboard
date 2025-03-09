@@ -1,11 +1,13 @@
 import React from 'react';
-import './Footer.css';
+import { Paper, Typography } from '@mui/material';
 
 const Footer = () => {
   return (
-    <footer className="footer">
-      <p>&copy; 2025 React Dashboard</p>
-    </footer>
+    <Paper sx={{ padding: 2, marginTop: 'auto' }} elevation={3}>
+      <Typography variant="body2" align="center">
+        © 2023 React Dashboard
+      </Typography>
+    </Paper>
   );
 };
 
