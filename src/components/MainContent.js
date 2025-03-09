@@ -1,6 +1,8 @@
 import React from 'react';
 import ChartComponent from './ChartComponent';
 import LineChart from './LineChart';
+import PieChart from './PieChart';
+import RadarChart from './RadarChart';
 import './MainContent.css';
 
 const MainContent = () => {
@@ -11,6 +13,8 @@ const MainContent = () => {
       <div className="chart-container">
         <ChartComponent />
         <LineChart />
+        <PieChart />
+        <RadarChart />
       </div>
     </main>
   );
